@@ -14,7 +14,7 @@ class Tutores extends Migration
     public function up()
     {
         Schema::create('tutores', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('empresa');
             $table->string('documento');
             $table->string('dni');
