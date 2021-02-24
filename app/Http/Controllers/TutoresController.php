@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Tutores;
 use Illuminate\Http\Request;
 
 class TutoresController extends Controller
@@ -14,7 +15,9 @@ class TutoresController extends Controller
      */
     public function index()
     {
-        //
+        $tutores = Tutores::all();
+
+        return view('tutores.index', compact('tutores'));
     }
 
     /**
@@ -24,7 +27,7 @@ class TutoresController extends Controller
      */
     public function create()
     {
-        return view('contacts.create');
+        return view('tutores.create');
     }
 
     /**
@@ -38,13 +41,11 @@ class TutoresController extends Controller
         $request->validate([
             'empresa' => 'required',
             'nombre' => 'required',
-            'primer_apellido',
-            'segundo_apellido',
             'telefono' => 'required',
             'email' => 'required',
         ]);
 
-        $contact = new Contact([
+        $tutores = new Tutores([
             'empresa' => $request->get('empresa'),
             'documento' => $request->get('documento'),
             'dni' => $request->get('dni'),
@@ -58,8 +59,8 @@ class TutoresController extends Controller
             'telefono' => $request->get('telefono'),
             'email' => $request->get('email'),
         ]);
-        $contact->save();
-        return redirect('/contacts')->with('success');
+        $tutores->save();
+        return redirect('/tutores')->with('success');
     }
 
     /**

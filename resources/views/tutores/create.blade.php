@@ -3,7 +3,7 @@
 @section('main')
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-3">Add a contact</h1>
+    <h1 class="display-3">Add a tutor</h1>
   <div>
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -14,7 +14,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('contacts.store') }}">
+      <form method="post" action="{{ route('tutores.store') }}">
           @csrf
           <div class="form-group">
               <label for="first_name">Empresa:</label>
@@ -64,7 +64,7 @@
               <label for="first_name">Email:</label>
               <input type="email" class="form-control" name="email" value="{{ old('email') }}"/>
           </div>
-          <button type="submit" class="btn btn-primary-outline">Add contact</button>
+          <button type="submit" class="btn btn-primary-outline">Add tutor</button>
       </form>
   </div>
 </div>
