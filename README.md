@@ -16,3 +16,10 @@
 - cp .env.example .env
 - php artisan key:generate
 - php artisan migrate
+
+## Seguridad ante todo
+user: user_laravel
+db: examen
+pass: Q!w2e3r4t5
+pgsql
+remoto: https://javiphpsite.sytes.net/adminer/?pgsql=
